@@ -1,0 +1,106 @@
+page-login {
+  .scroll-content {
+    background: url("../assets/imgs/backs/wagohomeoscurecida.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    .logo{
+      max-width: 100px;
+      display: block;
+      margin: 120px auto 20px;
+    }
+
+    .text-center{
+      text-align: center;
+    }
+
+    .item-md,
+    .item,
+    .item-block {
+      margin-top: 15px;
+      margin-bottom: 15px;
+      padding: 3px 20px !important;
+      border-radius: 25px !important;
+
+      span,
+      .text-input {
+        color: #103681 !important;
+
+        &::-webkit-input-placeholder {
+         color: #103681 !important;
+        }
+        &:-moz-placeholder {
+         color: #103681 !important;
+        }
+        &::-moz-placeholder {
+         color: #103681 !important;
+        }
+        &:-ms-input-placeholder {
+         color: #103681 !important;
+        }
+      }
+    }
+  }
+  .login-content {
+    background: #a88871;
+
+    .logo-row {
+      padding-top: 50px;
+      padding-bottom: 20px;
+    }
+
+    .login-box {
+      background: none;
+      padding: 20px 20px 0px 20px;
+      margin-top: 30px;
+      margin-left: 0.5rem;
+    }
+
+    ion-row {
+      align-items: center;
+      text-align: center;
+    }
+
+    ion-item {
+      margin-left: -0.1rem;
+      border-radius: 8px !important;
+      padding-left: 30px !important;
+      font-size: 0.9em;
+      margin-bottom: 10px;
+      border: 1px solid #ffffff;
+      border-bottom: 0px !important;
+      box-shadow: none !important;
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+
+    .signup-col {
+      padding-bottom: 20px;
+      margin: 16px !important;
+    }
+
+    .item-inner {
+      border-bottom-color: #ffffff !important;
+      box-shadow: none !important;
+    }
+
+    .submit-btn {
+      background: #a57958;
+      border-radius: 8px !important;
+      border: 1px solid #ffffff;
+    }
+
+    .register-btn {
+      color: #ffffff;
+      font-size: 0.8em;
+    }
+
+    .button-full{
+      margin: 16px !important;
+      width: 90% !important;
+      margin-left: 5%;
+    }
+  }
+}
