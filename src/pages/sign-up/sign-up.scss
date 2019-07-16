@@ -1,0 +1,23 @@
+page-sign-up {
+
+    .scroll-content {
+        background: url("../assets/imgs/backs/registrousuario.png") no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+
+        ion-buttons{
+            button{
+                font-weight: bold;
+                color:#0075bf;
+            }
+        }
+
+        h3{
+            color: #0075bf;
+            margin-top: 30px !important;
+        }
+    }
+
+}

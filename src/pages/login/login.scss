@@ -57,6 +57,9 @@ page-login {
       margin-top: 30px;
       margin-left: 0.5rem;
     }
+    ion-list, .list, .list-md{
+      margin: 16px 0 !important;
+    }
 
     ion-row {
       align-items: center;
