@@ -1,7 +1,6 @@
 {
-  "name": "helloWorldg",
-  "integrations": {
-    "cordova": {}
-  },
-  "type": "ionic-angular"
+  "name": "wago_c",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {}
 }
