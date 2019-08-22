@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { IonicPage, NavController } from 'ionic-angular';
+import { ApiProvider } from  './../../providers/api/api';
 
-/**
- * Generated class for the LoginPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { MapPage } from '../map/map';
+
+import { Storage } from '@ionic/storage';
+import { LoadingController } from 'ionic-angular';
+import { RegisterPage } from '../register/register';
 
 @IonicPage()
 @Component({
@@ -15,21 +14,42 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   templateUrl: 'login.html',
 })
 export class LoginPage {
+  loader:any;
+  public user = {email:"angelrodriguez@ucol.mx", password:"Hola1@"}
 
-  credentialsForm: FormGroup;
-
-  constructor(public navCtrl: NavController,
-              public navParams: NavParams,
-              private formBuilder: FormBuilder) {
-
-    this.credentialsForm = this.formBuilder.group({
-      email: [''],
-      password: ['']
-    });
-  }
+  constructor(
+    public navCtrl: NavController,
+    public apiProvider: ApiProvider,
+    public loadingCtrl: LoadingController,
+    private storage: Storage
+  ) { }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
+  }
+
+  presentLoading(text) {
+    this.loader = this.loadingCtrl.create({
+      content: text,
+    });
+    this.loader.present();
+  }
+
+  login(){
+
+    this.presentLoading("Iniciando Sesión");
+
+    this.apiProvider.login(this.user).then((data:any) => {
+      this.storage.set('wago_token', data.token);
+      this.storage.set('wago_user', JSON.stringify(data.user));
+      this.loader.dismiss();
+      this.navCtrl.setRoot(MapPage);
+    });
+  	 
+  }
+
+  goToRegister(){
+    this.navCtrl.setRoot(RegisterPage)
   }
 
 }

@@ -15,7 +15,7 @@ export class InterceptorProvider implements HttpInterceptor {
     // Intercepts all HTTP requests!
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
-        let promise = this.storage.get('pet_token');
+        let promise = this.storage.get('wago_token');
 
         return Observable.fromPromise(promise)
             .mergeMap(token => {

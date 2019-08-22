@@ -12,7 +12,7 @@ interface Res {
 
 export class ApiProvider {
 
-  url = "http://127.0.0.1:8000/api";
+  url = "http://127.0.0.1:8000/api/v1";
   public token: Observable<string>;
   httpOptions: Observable<any>;
   authenticated = false;
@@ -31,9 +31,20 @@ export class ApiProvider {
     });
   }
 
+  register(data) {
+    return new Promise(resolve => {
+      this.http.post(this.url + '/auth/register', data).subscribe((data:any) => {
+        resolve(data);
+      },
+        err => {
+          console.log(err);
+        });
+    });
+  }
+
   logout() {
     return new Promise(resolve => {
-      this.http.post(this.url + '/auth/logout',{}).subscribe((data:any) => {
+      this.http.get(this.url + '/auth/logout',{}).subscribe((data:any) => {
         resolve(data);
       },
         err => {
