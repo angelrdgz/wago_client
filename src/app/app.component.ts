@@ -8,9 +8,9 @@ import { ApiProvider } from './../providers/api/api';
 
 import { MapPage } from '../pages/map/map';
 import { CarPage } from '../pages/car/car';
+import { ServicesPage } from '../pages/services/services';
 import { ListPage } from '../pages/list/list';
 import { LoginPage } from '../pages/login/login';
-import { RegisterPage } from '../pages/register/register';
 
 @Component({
   templateUrl: 'app.html'
@@ -36,7 +36,7 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Mis pedidos', component: ListPage, icon: 'assets/imgs/icons/mispedidos.png' },
+      { title: 'Mis pedidos', component: ServicesPage, icon: 'assets/imgs/icons/mispedidos.png' },
       { title: 'Método de pago', component: ListPage, icon: 'assets/imgs/icons/auto.png' },
       { title: 'Mis autos', component: CarPage, icon: 'assets/imgs/icons/auto.png' },
       { title: 'Editar perfil', component: ListPage, icon: 'assets/imgs/icons/auto.png' },
@@ -53,7 +53,7 @@ export class MyApp {
       let self = this;
       this.storage.get('wago_user').then((condition) => {
         if (condition == null || condition == undefined) {
-          self.rootPage = RegisterPage;
+          self.rootPage = LoginPage;
         } else {
           this.user = JSON.parse(condition);
           self.rootPage = MapPage;

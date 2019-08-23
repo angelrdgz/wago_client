@@ -10,6 +10,7 @@ import { RegisterPage } from '../pages/register/register';
 import { MapPage } from '../pages/map/map';
 
 import { CarPage } from '../pages/car/car';
+import { ServicesPage } from '../pages/services/services';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -28,7 +29,8 @@ import { Geolocation } from '@ionic-native/geolocation';
     LoginPage,
     MapPage,
     RegisterPage,
-    CarPage
+    CarPage,
+    ServicesPage
   ],
   imports: [
     BrowserModule,
@@ -44,7 +46,8 @@ import { Geolocation } from '@ionic-native/geolocation';
     LoginPage,
     MapPage,
     RegisterPage,
-    CarPage
+    CarPage,
+    ServicesPage
   ],
   providers: [
     StatusBar,

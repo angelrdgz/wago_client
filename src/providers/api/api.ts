@@ -1,8 +1,6 @@
-import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from "rxjs/Rx"
-
-import { Storage } from '@ionic/storage';
 
 interface Res {
   data:any;
@@ -12,13 +10,13 @@ interface Res {
 
 export class ApiProvider {
 
-  url = "http://127.0.0.1:8000/api/v1";
+  url = "http://10.238.203.164:8000/api/v1";
   public token: Observable<string>;
   httpOptions: Observable<any>;
   authenticated = false;
   message = '';
 
-  constructor(public http: HttpClient, private storage: Storage) { }
+  constructor(public http: HttpClient) { }
 
   login(data) {
     return new Promise(resolve => {

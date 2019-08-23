@@ -5,7 +5,7 @@ import { Storage } from '@ionic/storage';
 
 import { Observable } from 'rxjs';
 import { _throw } from 'rxjs/observable/throw';
-import { catchError, mergeMap } from 'rxjs/operators';
+import { catchError } from 'rxjs/operators';
 
 @Injectable()
 export class InterceptorProvider implements HttpInterceptor {
