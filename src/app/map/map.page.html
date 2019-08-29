@@ -1,0 +1,23 @@
+<ion-content>
+ 
+  <div class="map-wrapper">
+      <div class="header">
+          <img src="assets/imgs/icons/LOGOSOLOWAGO.png" (click)="toggleMenu()"/>
+       </div>
+       <div class="searchBar">
+          <ion-input type="text" placeholder="¿Dónde está tu auto?"></ion-input>
+       </div>
+    <div id="map_center">
+      <img src="assets/imgs/icons/ubicacion.png" />
+    </div>
+    <div #map id="map"></div>
+    <div class="banner">
+      <img src="" alt="">
+    </div>
+    <div class="centerMap" (click)="loadMap()">
+      <ion-icon name="locate"></ion-icon>
+    </div>
+  </div>
+ 
+ 
+</ion-content>

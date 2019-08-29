@@ -1,8 +1,7 @@
 {
-  "name": "wago_c",
+  "name": "wago_new",
   "integrations": {
     "cordova": {}
   },
-  "type": "ionic-angular",
-  "app_id": ""
+  "type": "angular"
 }

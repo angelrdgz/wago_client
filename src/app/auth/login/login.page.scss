@@ -1,0 +1,65 @@
+ion-content {
+    --background: url("../../../assets/imgs/backs/wagohomeoscurecida.jpg") no-repeat center center fixed;
+  }
+  .logo {
+      max-width: 100px;
+      display: block;
+      margin: 120px auto 20px;
+    }
+  ion-item {
+    --margin-left: -0.1rem;
+    --border-radius: 20px !important;
+    --padding-left: 30px !important;
+    --font-size: 0.9em;
+    --margin-bottom: 10px;
+    --border: 1px solid #ffffff;
+    --border-bottom: 0px !important;
+    --box-shadow: none !important;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    height: 80px;
+  
+    ion-icon{
+      color: #103681 !important;
+      font-size: 1.3em !important;
+      margin-right: 10px;
+    }
+  
+    ion-input, input{
+      height: 60px !important;
+      padding-left: 20px;
+      color: #103681 !important;
+  
+      &::-webkit-input-placeholder {
+        color: #103681 !important;
+      }
+      &:-moz-placeholder {
+        color: #103681 !important;
+      }
+      &::-moz-placeholder {
+        color: #103681 !important;
+      }
+      &:-ms-input-placeholder {
+        color: #103681 !important;
+      }
+    }
+  
+    span {
+      color: #103681 !important;
+      font-size: 1em !important;
+  
+      &::-webkit-input-placeholder {
+        color: #103681 !important;
+      }
+      &:-moz-placeholder {
+        color: #103681 !important;
+      }
+      &::-moz-placeholder {
+        color: #103681 !important;
+      }
+      &:-ms-input-placeholder {
+        color: #103681 !important;
+      }
+    }
+  }
+  

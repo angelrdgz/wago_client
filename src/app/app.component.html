@@ -1,0 +1,42 @@
+<ion-app>
+  <ion-split-pane>
+    <ion-menu type="overlay" side="end">
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>
+              <img src="assets/imgs/icons/LOGOWAGO.png" width="35" />
+          </ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+          <div class="header-box">
+              <ion-grid>
+                <ion-row *ngIf="user">
+                  <ion-col size="3">
+                    <img src="https://via.placeholder.com/150" class="pp" alt="">
+                  </ion-col>
+                  <ion-col size="9">
+                    <p><b>{{user.name}} {{user.lastname}}</b></p>
+                    <p>5.0 (1300 servicios)</p>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </div>
+            <ion-list>
+                <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
+                    <ion-item [routerDirection]="'push'" [routerLink]="[p.url]">
+                      <ion-icon slot="start" [name]="p.icon"></ion-icon>
+                      <ion-label>
+                        {{p.title}}
+                      </ion-label>
+                    </ion-item>
+                  </ion-menu-toggle>
+                  <ion-item menuClose ion-item (click)="logout()">
+                      Cerrar sesión
+                     </ion-item>           
+            </ion-list>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet main></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

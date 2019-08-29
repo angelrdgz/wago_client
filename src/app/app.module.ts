@@ -1,61 +1,42 @@
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
-import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { RouteReuseStrategy } from '@angular/router';
 
-import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
-import { LoginPage } from '../pages/login/login';
-import { RegisterPage } from '../pages/register/register';
-import { MapPage } from '../pages/map/map';
+import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
+import { SplashScreen } from '@ionic-native/splash-screen/ngx';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
 
-import { CarPage } from '../pages/car/car';
-import { ServicesPage } from '../pages/services/services';
+import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
 
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
-
-import { InterceptorProvider } from '../providers/interceptor/interceptor';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { NativeGeocoder } from '@ionic-native/native-geocoder/ngx';
 import { IonicStorageModule } from '@ionic/storage';
-import { ApiProvider } from '../providers/api/api';
-import { Geolocation } from '@ionic-native/geolocation';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokenInterceptor } from './interceptors/token.interceptor';
+import { ApiProvider } from  './services/api.service';
+import { AuthenticationService } from  './services/authentication.service';
 
 @NgModule({
-  declarations: [
-    MyApp,
-    HomePage,
-    ListPage,
-    LoginPage,
-    MapPage,
-    RegisterPage,
-    CarPage,
-    ServicesPage
-  ],
+  declarations: [AppComponent],
+  entryComponents: [],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),    
+    IonicModule.forRoot(),
+    AppRoutingModule,
     IonicStorageModule.forRoot(),
     HttpClientModule
-  ],
-  bootstrap: [IonicApp],
-  entryComponents: [
-    MyApp,
-    HomePage,
-    ListPage,
-    LoginPage,
-    MapPage,
-    RegisterPage,
-    CarPage,
-    ServicesPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     Geolocation,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
-    { provide: HTTP_INTERCEPTORS, useClass: InterceptorProvider, multi: true },
+    NativeGeocoder,
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    { provide: HTTP_INTERCEPTORS,useClass: TokenInterceptor,multi: true},
     ApiProvider,
-  ]
+    AuthenticationService
+  ],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

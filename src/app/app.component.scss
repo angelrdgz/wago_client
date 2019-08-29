@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css?family=Karla&display=swap");
+* {
+  font-family: "Karla", sans-serif;
+}
+.toolbar-background-ios {
+  background: #fff !important;
+}
+.header-box {
+  width: 100%;
+  height: 80px;
+  padding: 10px;
+  margin: 20px 0px;
+
+  p {
+    margin: 5px;
+    color: #fff;
+  }
+
+  .pp {
+    width: 50px;
+    border-radius: 50%;
+  }
+}
+ion-toolbar{
+    ion-title{
+        margin-top: 15px;
+        img{
+            display: block;
+            margin: 10px auto;
+        }
+    }
+}
+ion-menu {
+  background: #fff;
+  ion-header {
+    background: #fff;
+    ion-toolbar {
+      height: 80px;
+      background: #fff;
+    }
+  }
+
+  ion-content {
+    --background: #0075bf !important;
+    ion-list{
+        background: transparent !important;
+        ion-menu-toggle {
+            --background: transparent !important;
+            ion-item {
+              --background: transparent !important;
+              --border: 0 !important;
+              --color: #fff !important;
+              ion-icon {
+                margin-right: 15px;
+                color: #fff;
+              }
+              ion-label{
+                --border: 0 !important;
+              }
+            }
+          }
+    }
+  }
+}
